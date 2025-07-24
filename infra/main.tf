@@ -18,6 +18,11 @@ resource "azurerm_resource_group" "rg" {
   location = "West Europe"
 }
 
+resource "azurerm_resource_group" "rg1" {
+  name     = "rg-testpipe1"
+  location = "West Europe"
+}
+
 resource "azurerm_storage_account" "sg" {
   name                     = "pipestorage"
   resource_group_name      = azurerm_resource_group.rg.name
