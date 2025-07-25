@@ -5,14 +5,18 @@ terraform {
       version = "4.37.0"
     }
   }
+  backend "azurerm" {
+    storage_account_name = "automotionpipeline1234"
+    resource_group_name = "dhiraj"
+    container_name = "meracontainer"
+    key = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
   features {}
   subscription_id = "f5c092a3-a10b-4952-9791-a66c5de6792b"
 }
-
-hi new add
 
 resource "azurerm_resource_group" "rg" {
   name     = "rg-testpipe"
